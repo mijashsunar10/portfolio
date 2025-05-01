@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('portfolio.index');
 })->name('home');
 
 Route::view('dashboard', 'dashboard')
@@ -18,9 +19,10 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/password', 'settings.password')->name('settings.password');
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
-Route::get('/index', function () {
-    return view('portfolio.index');
-})->name('index');
+// Route::get('/index', function () {
+//     return view('portfolio.index');
+// })->name('index');
 
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
 require __DIR__.'/auth.php';

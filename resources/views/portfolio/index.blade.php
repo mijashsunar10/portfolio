@@ -12,7 +12,7 @@
   <link href="{{asset('assets/img/favicon.png')}}" rel="icon" >
   {{-- <link href="{{asset('assets/img/apple-touch-icon.png" rel="apple-touch-icon') }}"> --}}
   <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
    
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -130,7 +130,7 @@
             <div class="container" data-aos="fade-up" data-aos-delay="100">
               <div class="row gy-4 justify-content-center">
                 <div class="col-lg-4">
-                  <img src="{{ asset('assets/img/my/image16.jpg') }}" class="img-fluid" alt="My Profile">
+                  <img src="{{ asset('assets/img/my/image17.jpg') }}" class="img-fluid" alt="My Profile">
                 </div>
                 <div class="col-lg-8 content">
                   <h2>Full Stack Developer</h2>
@@ -765,94 +765,187 @@
       
           </section><!-- /Testimonials Section --> --}}
       
-          <!-- Contact Section -->
-          <section id="contact" class="contact section">
-      
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-              <h2>Contact</h2>
-              <p>If you have any questions or need more information about our services, feel free to reach out to us. Whether you're looking for technical support, project inquiries, or want to discuss a potential collaboration, we're here to help. Simply fill out the contact form below or get in touch via email or phone.</p>
-              
-            </div><!-- End Section Title -->
-      
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-      
-              <div class="row gy-4">
-      
-                <div class="col-lg-5">
-      
-                  <div class="info-wrap">
-                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                      <i class="bi bi-geo-alt flex-shrink-0"></i>
-                      <div>
-                        <h3>Address</h3>
-                        <p>Birauta-17, Pokhara, Nepal</p>
-                      </div>
-                    </div><!-- End Info Item -->
-      
-                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                      <i class="bi bi-telephone flex-shrink-0"></i>
-                      <div>
-                        <h3>Call Me</h3>
-                        <p><a href="tel:+9779826115361" class="text-decoration-none">+977 9826115361</a></p>
-                      </div>
+          <style>
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fa-spinner {
+            animation: spin 1s linear infinite;
+        }
+        </style>
+        
+         <!-- Flash Message Container -->
+         <div id="flashMessage" class="fixed top-0 xl:top-20 left-0 right-0 bg-green-500 text-white text-center py-3 z-50 hidden">
+            <span id="flashMessageText"></span>
+        </div>
+        
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="fixed top-0 xl:top-20 left-0 right-0 bg-blue-500 text-white text-center py-3 z-50 hidden">
+            Sending your message... <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        
+        <section class="bg-[#f9fafb] py-16 font-sans">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Heading -->
+            <div class="mb-16">
+              <p class="text-4xl font-bold text-gray-800 mb-4">Get In Touch</p>
+              <div class="w-24 h-1.5 bg-blue-600 mb-6"></div>
+              <p class="text-gray-800 text-lg max-w-7xl">              
+                If you have any questions or need more information about our services, feel free to reach out to us. Whether you're looking for technical support, project inquiries, or want to discuss a potential collaboration, we're here to help.
+              </p>
+            </div>
+        
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <!-- Left Side: Contact Details - More Compact and Elegant -->
+              <div class="space-y-6 lg:w-5/6">
+                <!-- Contact Info Cards with refined design -->
+                <div class="bg-white p-2 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                  <div class="flex items-center space-x-4">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
                     </div>
-                    <!-- End Info Item -->
-      
-                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                      <i class="bi bi-envelope flex-shrink-0"></i>
-                      <div>
-                        <h3>Email Us</h3>
-                        <p><a href="mailto:mijashsunar1@gmail.com">mijashsunar1@gmail.com</a></p>
-                      </div>
+                    <div>
+                      <p class="text-lg font-semibold text-gray-800 mb-1">My Location</p>
+                      <p class="text-gray-600">Birauta-17,Pokhara</p>
                     </div>
-                    <!-- End Info Item -->
-      
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d656.7291505446209!2d83.95243838125496!3d28.191440428690985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995950055d33ba5%3A0x5b3794c1a7351458!2sPumdikot%20Samjhana%20Jwellers!5e0!3m2!1sen!2snp!4v1746001165069!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                   </div>
                 </div>
-      
-                <div class="col-lg-7">
-                  <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                    <div class="row gy-4">
-      
-                      <div class="col-md-6">
-                        <label for="name-field" class="pb-2">Your Name</label>
-                        <input type="text" name="name" id="name-field" class="form-control" required="">
-                      </div>
-      
-                      <div class="col-md-6">
-                        <label for="email-field" class="pb-2">Your Email</label>
-                        <input type="email" class="form-control" name="email" id="email-field" required="">
-                      </div>
-      
-                      <div class="col-md-12">
-                        <label for="subject-field" class="pb-2">Subject</label>
-                        <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                      </div>
-      
-                      <div class="col-md-12">
-                        <label for="message-field" class="pb-2">Message</label>
-                        <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                      </div>
-      
-                      <div class="col-md-12 text-center">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-      
-                        <button type="submit">Send Message</button>
-                      </div>
-      
+        
+                <div class="bg-white p-2 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                  <div class="flex items-center space-x-4">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                      </svg>
                     </div>
-                  </form>
-                </div><!-- End Contact Form -->
-      
+                    <div>
+                      <p class="text-lg font-semibold text-gray-800 mb-1">Phone Number</p>
+                      <p class="text-gray-600">
+                        <a href="tel:+9779826115361" class="text-gray-600 hover:underline">+9779826115361</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="bg-white p-2 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-gray-100">
+                  <div class="flex items-center space-x-4">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="text-lg font-semibold text-gray-800 mb-1">Email Address</p>
+                      <p class="text-gray-600">
+                        <a href="mailto:mijashsunar1@gmail.com" class="text-gray-600 hover:underline">mijashsunar1@gmail.com</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+        
+                <!-- Embedded Map - More Compact -->
+                <div class="w-full h-80 rounded-xl overflow-hidden shadow-md border border-gray-200">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1104.077414207099!2d83.95165025284302!3d28.191640342432283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995950055d33ba5%3A0x5b3794c1a7351458!2sPumdikot%20Samjhana%20Jwellers!5e0!3m2!1sen!2snp!4v1746068383835!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
               </div>
-      
+        
+              <!-- Right Side: Contact Form - Enhanced with Darker Border -->
+              <div>
+                <div class="bg-white p-8 mr-4 rounded-2xl shadow-lg border-2 border-blue-200">
+                  <p class="text-2xl font-bold text-gray-800 mb-2 text-center">Send Me a Message</p>
+                  <p class="text-gray-600 text-center mb-6">I will definately respond within 24 hours</p>
+                  
+                  <form class="space-y-5" id="contactForm">
+                    <div class="grid grid-cols-1  gap-5">
+                      <div>
+                        <label for="name" class="block text-md font-medium text-gray-700 mb-1">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe"
+                          class="w-full px-4 py-2.5 rounded-lg border border-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200">
+                      </div>
+                     
+                    </div>
+
+                    <div>
+                      <label for="email" class="block text-md font-medium text-gray-700 mb-1">Your Email</label>
+                      <input type="email" id="email" name="email" placeholder="john@example.com"
+                        class="w-full px-4 py-2.5 rounded-lg border border-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200">
+                    </div>
+                    
+                    <div>
+                      <label for="subject" class="block text-md font-medium text-gray-700 mb-1">Subject</label>
+                      <input type="text" id="subject" name="subject" placeholder="How can I help?"
+                        class="w-full px-4 py-2.5 rounded-lg border border-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200">
+                    </div>
+                    
+                    <div>
+                      <label for="message" class="block text-md font-medium text-gray-700 mb-1">Your Message</label>
+                      <textarea id="message" name="message" placeholder="Send me a message..." rows="4"
+                        class="w-full px-4 py-2.5 rounded-lg border border-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition duration-200"></textarea>
+                    </div>
+                    
+                    <button type="submit"
+                      class="w-full bg-[#149ddd] hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+                      Send Message
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                      </svg>
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
-      
-          </section><!-- /Contact Section -->
+          </div>
+        </section>
+            <script>
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent the form's default action
+        
+                    const form = e.target;
+                    const formData = new FormData(form);
+                    const flashMessage = document.getElementById('flashMessage');
+                    const flashMessageText = document.getElementById('flashMessageText');
+                    const loadingIndicator = document.getElementById('loadingIndicator');
+        
+                    // Show loading indicator
+                    loadingIndicator.classList.remove('hidden');
+        
+                    fetch('{{ route('contact.send') }}', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                            'Accept': 'application/json',
+                        },
+                        body: formData,
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.message) {
+                            form.reset(); // Clear the form inputs
+        
+                            // Show flash message
+                            flashMessageText.textContent = data.message;
+                            flashMessage.classList.remove('hidden');
+                            setTimeout(() => {
+                                flashMessage.classList.add('hidden'); // Hide the message after 4 seconds
+                            }, 4000);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred. Please try again.');
+                    })
+                    .finally(() => {
+                        // Hide loading indicator
+                        loadingIndicator.classList.add('hidden');
+                    });
+                });
+            </script>
       
         </main>
       </body>
