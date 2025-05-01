@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
+use App\Http\Controllers\TestimonialController;
 
 Route::get('/', function () {
     return view('portfolio.index');
@@ -24,5 +25,8 @@ Route::middleware(['auth'])->group(function () {
 // })->name('index');
 
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+
+// routes/web.php
 
 require __DIR__.'/auth.php';

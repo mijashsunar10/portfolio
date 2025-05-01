@@ -7,6 +7,7 @@
     <title>Portfolio</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
      <!-- Favicons -->
   <link href="{{asset('assets/img/favicon.png')}}" rel="icon" >
@@ -30,6 +31,7 @@
 
   <!-- Main CSS File -->
   <link href="{{asset('assets/css/main.css')}}" rel="stylesheet">
+
 
 </head>
 <body>
@@ -56,12 +58,21 @@
         </a>
     
         <div class="social-links text-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+         
+          <a href="https://www.linkedin.com/in/mijash-sunar-566642362/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/mijashsunar10" class="google-plus" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="mailto:your.email@gmail.com" class="gmail">
+            <i class="bi bi-envelope"></i>
+          </a>
+          <!-- Call -->
+          <a href="tel:+9779826115361" class="phone">
+            <i class="bi bi-telephone"></i>
+          </a>
+
+          <a href="https://www.facebook.com/kingmaker.anamol" class="facebook"><i class="bi bi-facebook"></i></a>
+         
         </div>
+       
     
         <nav id="navmenu" class="navmenu">
           <ul>
@@ -70,23 +81,7 @@
             <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
             <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
             <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-            {{-- <li class="dropdown"><a href="#"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li> --}}
+          
             <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
           </ul>
         </nav>
@@ -110,7 +105,7 @@
             <div class="container" data-aos="fade-up" data-aos-delay="100" style="position:relative; z-index:2; color:white; ;">
               <h2>Mijash Sunar</h2>
               <p>
-                I'm <span class="typed" data-typed-items="Full stack Developer, Designer, Freelancer">Full Stack Developer</span>
+                I'm <span class="typed" data-typed-items="Full stack Developer, Designer, Freelancer">Designer</span>
                 <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
               </p>
             </div>
@@ -141,18 +136,30 @@
                     <div class="col-lg-6">
                       <ul>
                         <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>15 January, 2004</span></li>
-                        <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                        <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><a href="tel:+9779826115361" class="text-decoration-none">+977 9826115361</a></span></li>
+                        {{-- <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li> --}}
+                        <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
+                        
                         <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Pokhara, Nepal</span></li>
+
+                        
+                        <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor (Currently Studying)</span></li>
+                       
+                        <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                        
+
+
+
                       </ul>
                     </div>
                     <div class="col-lg-6">
                       <ul>
-                        <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>21</span></li>
-                        <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor (Currently Studying)</span></li>
                         <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><a href="mailto:mijashsunar1@gmail.com">mijashsunar1@gmail.com</a></span></li>
-                        <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                      </ul>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><a href="tel:+9779826115361" class="text-decoration-none">+977 9826115361</a></span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Github:</strong> <span><a href="https://github.com/mijashsunar10" target="_blank">Mijash Sunar</a></span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Linkedin:</strong> <span><a href="https://www.linkedin.com/in/mijash-sunar-566642362/" target="_blank">Mijash Sunar</a></span></li>
+
+                       
+                                             </ul>
                     </div>
                   </div>
                   <p class="py-3">
@@ -182,8 +189,8 @@
                 <div class="col-lg-3 col-md-6">
                   <div class="stats-item">
                     <i class="bi bi-journal-richtext"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Completed Projects</strong> <span>Built a Trekking Website and a Storytelling Platform.</span></p>
+                    <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Completed Projects</strong> <span>Built a Trekking Website and a Storytelling Platform and many more</span></p>
                   </div>
                 </div><!-- End Stats Item -->
       
@@ -654,6 +661,8 @@
           </section><!-- /Services Section -->
       
           <!-- Testimonials Section -->
+
+ 
           {{-- <section id="testimonials" class="testimonials section light-background">
       
             <!-- Section Title -->
@@ -786,7 +795,7 @@
             Sending your message... <i class="fas fa-spinner fa-spin"></i>
         </div>
         
-        <section class="bg-[#f9fafb] py-16 font-sans">
+        <section class="bg-[#f9fafb] py-16 font-sans" id="contact">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Heading -->
             <div class="mb-16">
@@ -974,6 +983,8 @@
 
   <!-- Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
+
+
     
     
 </body>

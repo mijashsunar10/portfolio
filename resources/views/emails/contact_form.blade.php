@@ -7,7 +7,7 @@
  </head>
  
  <body>
-     <h2>Dawn in Nepal Adventures Pvt Ltd</h2>
+     <h2>Mijash Portfolio</h2>
      <p class="text-lg"><strong>Name:</strong> {{ $data['name'] }}</p>
      <p class="text-lg"><strong>Email:</strong> {{ $data['email'] }}</p>
      @if (!empty($data['subject']))
